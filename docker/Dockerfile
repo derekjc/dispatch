@@ -17,7 +17,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
-# Required 
 RUN /usr/local/bin/pip3 install setuptools wheel
 
 RUN wget --quiet -O - https://deb.nodesource.com/setup_20.x | bash - \
@@ -58,7 +57,7 @@ RUN YARN_CACHE_FOLDER="$(mktemp -d)" \
     && rm -r "$YARN_CACHE_FOLDER" \
     && mv /usr/src/dispatch/dist /dist
 
-# This is the image to be run
+
 FROM python:3.13.0-slim-bullseye
 
 LABEL maintainer="oss@dispatch.io"

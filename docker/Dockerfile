@@ -1,4 +1,4 @@
-FROM python:3.13.0-bullseye as sdist
+FROM python:3.11.0-bullseye as sdist
 
 LABEL maintainer="oss@netflix.com"
 LABEL org.opencontainers.image.title="Dispatch PyPI Wheel"
@@ -58,7 +58,7 @@ RUN YARN_CACHE_FOLDER="$(mktemp -d)" \
     && mv /usr/src/dispatch/dist /dist
 
 
-FROM python:3.13.0-bullseye
+FROM python:3.11.0-bullseye
 
 LABEL maintainer="oss@dispatch.io"
 LABEL org.opencontainers.image.title="Dispatch"
